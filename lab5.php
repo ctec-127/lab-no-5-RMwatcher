@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,16 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Lab No. 5</title>
 </head>
+
 <body>
-<div class="container-fluid">
+    <?php
+    if (isset($_GET[''])) {
+    }
+    ?>
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Clark College Aboretum</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -51,87 +56,71 @@
         </div>
     </div>
 
-    <div class="container-fluid mt-3">
-        <h3 class="text-white p-3 shadow">Aralia</h3>
-        <div class="row mb-3">
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card mt-3 mb-3 shadow">
-                    <div class="card-header align-leff">
-                        <a href="https://www.google.com/maps/search/?api=1&query=45.63472,-122.6500">Castor Aralia
-                        </a>
-                    </div>
-                    <img class="card-img-top" src="img/trees/castor_aralia.jpg" alt="Kalopanax pictus">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Common Genus:</strong> Aralia<br>
-                            <strong>Botanical Name:</strong> <em>Kalopanax pictus</em></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <?php //require "inc/aralia.inc.html"; 
+    ?>
+    <?php //require "inc/arborvitae.inc.html"; 
+    ?>
+    <?php //require "inc/ash.inc.html"; 
+    ?>
 
-        <h3 class="p-3 shadow">Arborvitae</h3>
-        <div class="row mb-3">
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card mt-3 mb-3 shadow">
-                    <div class="card-header shadow">
-                        <a href="https://www.google.com/maps/search/?api=1&query=45.63472,-122.65247">American
-                            Arborvitae</a>
-                    </div>
-                    <img class="card-img-top" src="img/trees/evergreen48.jpg" alt="occidentalis">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Common Genus:</strong> Arborvitae<br>
-                            <strong>Botanical Name:</strong> <em>occidentalis</em></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <?php
 
-        <h3 class="p-3 shadow">Ash</h3>
-        <div class="row mb-3">
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card mt-3 mb-3 shadow">
-                    <div class="card-header shadow">
-                        <a href="https://www.google.com/maps/search/?api=1&query=45.635857,-122.652392">Rose Hill Ash</a>
-                    </div>
-                    <img class="card-img-top" src="img/trees/deciduous33.jpg" alt="americana">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Common Genus:</strong> Ash<br>
-                            <strong>Botanical Name:</strong> <em>americana</em></p>
-                    </div>
-                </div>
-            </div>
+    $flag = false;
+    $flag1 = false;
+    $flag2 = false;
 
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card mt-3 mb-3 shadow">
-                    <div class="card-header shadow">
-                        <a href="https://www.google.com/maps/search/?api=1&query=45.63591,-122.65031">Raywood Ash</a>
-                    </div>
-                    <img class="card-img-top" src="img/trees/deciduous34.jpg" alt="angustifolia">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Common Genus:</strong> Ash<br>
-                            <strong>Botanical Name:</strong> <em>angustifolia</em></p>
-                    </div>
-                </div>
-            </div>
+    if (isset($_GET['aralia'])) {
+        if ($_GET['aralia'] == 'yes') {
+            $flag = true;
+        } else {
+            if ($_GET['aralia'] == 'no') {
+                $flag = false;
+            }
+        }
+    }
 
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card mt-3 mb-3 shadow">
-                    <div class="card-header shadow">
-                        <a href="https://www.google.com/maps/search/?api=1&query=45.635541,-122.649899">Oregon Ash</a>
-                    </div>
-                    <img class="card-img-top" src="img/trees/deciduous35.jpg" alt="latifolia">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Common Genus:</strong> Ash<br>
-                            <strong>Botanical Name:</strong> ∏<em>latifolia</em></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-</div>
+    if ($flag == true) {
+        require "inc/aralia.inc.html";
+    }
+    if (isset($_GET['arborvitae'])) {
+        if ($_GET['arborvitae'] == 'yes') {
+            $flag1 = true;
+        } else {
+            if ($_GET['arborvitae'] == 'no') {
+                $flag1 = false;
+            }
+        }
+    }
 
-<!-- jQuery -->
-<script src="js/jquery-3.3.1.min.js"></script>
-<!-- Bootstrap JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+    if ($flag1 == true) {
+        require "inc/arborvitae.inc.html";
+    }
+    if (isset($_GET['ash'])) {
+        if ($_GET['ash'] == 'yes') {
+            $flag2 = true;
+        } else {
+            if ($_GET['ash'] == 'no') {
+                $flag2 = false;
+            }
+        }
+    }
+
+    if ($flag2 == true) {
+        require "inc/ash.inc.html";
+    }
+
+    if ($flag == false && $flag1 == false && $flag2 == false) {
+        require "inc/aralia.inc.html";
+        require "inc/arborvitae.inc.html";
+        require "inc/ash.inc.html";
+    }
+
+    ?>
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
+
 </html>

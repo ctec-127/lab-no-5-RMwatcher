@@ -12,10 +12,7 @@
 </head>
 
 <body>
-    <?php
-    if (isset($_GET[''])) {
-    }
-    ?>
+
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Clark College Aboretum</a>

@@ -56,13 +56,6 @@
         </div>
     </div>
 
-    <?php //require "inc/aralia.inc.html"; 
-    ?>
-    <?php //require "inc/arborvitae.inc.html"; 
-    ?>
-    <?php //require "inc/ash.inc.html"; 
-    ?>
-
     <?php
 
     $flag = false;
